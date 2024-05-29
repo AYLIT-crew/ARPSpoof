@@ -29,8 +29,8 @@ import the function `colored` from `termcolor` library and assigns alias `cl`.
 
 ### `from pyfiglet import figlet_format as ff`
 ***
-It takes ASCII text and renders it in ACII art fonts 
-import `filglet_format` from `pyfiglet` library and assigns alias `ff`.
+It takes ASCII text and renders it in ASCII art fonts
+import `filglet_format` from `pyfiglet` and assigns alias `ff`.
 
 ```
 def get_mac_address(ip):
@@ -44,7 +44,7 @@ def get_mac_address(ip):
 
 ### def get_mac_address(ip)
 ***
-definition of the function `get_mac_address`, take the IP address and uses to make ARP request.
+definition of the function `get_mac_address`.
 
 ### arp_request = scapy.ARP(pstd=ip)
 ***
@@ -68,7 +68,7 @@ we used `/` to combine both ARP and broadcast ethernet Packet, this will make th
 
 ### mac = data{0}{1}.hwsrc
 ***
-the MAC address got extracted from the answer, `data` take the element from the list that contains request and response, `[1]` take the request
+the MAC address got extracted from the answer, `data` take the element from the list that contains request and response, `[1]` take the request,
 `hwsrc` contains the MAC address of the endpoint who sended the response
 
 ### return = mac
@@ -99,7 +99,7 @@ def arp_spoofing(tip, rip):
 ***
 definition of the function `arp_spoofing(tip, rip)` target ip/router ip
 ### tmac = get_mac_address(tip)
-call the function `get_mac_address` taking the MAC of the target ip, the result is stored into tmac
+call the function `get_mac_address`, take the MAC of the target ip, the result is stored into tmac
 
 ### cnt = 0
 ***
@@ -125,11 +125,12 @@ while True:
 ***
 `print(cl('='*50, 'red'))
 `print(cl(ff('ARPSpoof')+'\n\t\t\t-ARP Spoofing
-`program\n\t\t\t-An AYLIT production', 'red'))print(cl('='*50, 'red'))` graphic stuff
+`program\n\t\t\t-An AYLIT production', 'red'))print(cl('='*50, 'red'))`
+graphic stuff
 
 ### packet = scapy.ARP(op=2, pdst=tip, hwdst=tmac psrc=rip)
 ***
-create a packet containing all the components, `op=2` specify the kind of ARP operation, 2 specify response, `pdst=tip` set the destination IP, `hwdst=tmac` set the MAC, `psrc=rip` set the source IP that will be covered with rip
+create a packet containing all the components, `op=2` specify the kind of ARP operation, "2" specify "response", `pdst=tip` set the destination IP, `hwdst=tmac` set the MAC, `psrc=rip` set the source IP that will be covered with rip
 
 ### scapy.send(packet, verbose=False)
 ***
