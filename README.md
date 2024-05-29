@@ -42,7 +42,6 @@ def get_mac_address(ip):
     return mac
 ```
 
-create an ARP packet that request the MAC address associated with the given IP, this packet is encapsulated into the ethernet packet, srp send the packet and wait for response, the MAC got extracted from the response
 ### def get_mac_address(ip)
 ***
 definition of the function `get_mac_address`, take the IP address and uses to make ARP request.
