@@ -61,7 +61,7 @@ we used `/` to combine both ARP and broadcast ethernet Packet, this will make th
 
 ### data = scapy.srp(broadcast_arp_request, timeout=1, verbose=False)[0]
 ***
-`srp()` function send packet and recives packets at layer 2, `broadcas_arp_request` the packet we created, 
+`srp()` function send packets and recives packets at layer 2, `broadcas_arp_request` the packet we created, 
 `timeout=1` wait 1 second,
 `false` disable the detailed output, 
 `srp` return a tuple, where the first element contain all the responses, [0] take that list
